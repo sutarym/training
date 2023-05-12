@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan -out=plan.out'
+                sh 'terraform plan'
             }
         }
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply plan.out'
+                sh 'terraform apply'
             }
         }
     }
