@@ -1,11 +1,7 @@
 pipeline {
     agent any
     
-     environment {
-        ACCESS_KEY    = credentials('ACCESS_KEY')
-        SECRET_KEY = credentials('SECRET_KEY')
-        TF_IN_AUTOMATION      = '1'
-    }
+     
     stages {
        
         
