@@ -1,26 +1,23 @@
-pipeline{
+pipeline {
     agent any
-    tools {
-  terraform 'terraform'
-       }
-    stages{
-        
+    stages {
        
         
-        stage("TF Init"){
-            steps{
-                echo "Executing Terraform Init"
+        stage('Terraform Init') {
+            steps {
                 sh 'terraform init'
             }
         }
-        
-         stage("TF Validate"){
-            steps{
-                echo "Executing Terraform Init"
-                sh 'terraform validate'
+        stage('Terraform Plan') {
+            steps {
+                sh 'terraform plan -out=plan.out'
             }
         }
-         
-        
+        stage('Terraform Apply') {
+            steps {
+                sh 'terraform apply plan.out'
+            }
+        }
     }
 }
+
