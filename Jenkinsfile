@@ -18,6 +18,7 @@ pipeline{
                 sh 'terraform init'
             }
         }
+         /*
         stage("TF Validate"){
             steps{
                 echo "Validating Terraform Code"
@@ -42,4 +43,5 @@ pipeline{
             }
         }
     }
+     /*
 }
