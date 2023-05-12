@@ -4,12 +4,14 @@ pipeline{
   terraform 'terraform'
        }
     stages{
+        /*
         stage("GIT CHECKOUT"){
             steps{
                 
                git branch: 'main', url: 'https://github.com/sutarym/training.git'
             }
         }
+        */
         stage("TF Init"){
             steps{
                 echo "Executing Terraform Init"
