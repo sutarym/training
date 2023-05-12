@@ -9,7 +9,7 @@ provider "aws" {
 terraform{
   backend "s3" {
     bucket = "yasin-sutar-bucket"
-    key    = "terraform.tfstate"
+    key    = "Yasin.Sutar"
     region = "ap-south-1"
    
   }
