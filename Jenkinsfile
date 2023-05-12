@@ -5,7 +5,7 @@ pipeline {
         
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                sh 'terraform init -reconfigure'
             }
         }
         stage('Terraform Plan') {
