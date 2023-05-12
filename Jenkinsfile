@@ -4,6 +4,12 @@ pipeline{
   terraform 'terraform'
        }
     stages{
+        stage("GIT CHECKOUT"){
+            steps{
+                
+                sh 'terraform init'
+            }
+        }
         stage("TF Init"){
             steps{
                 echo "Executing Terraform Init"
