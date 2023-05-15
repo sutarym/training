@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "delete-bucket-yasint"
+    bucket = "delete-bucket-yasin"
     key    = "terraform.tfstate"
     region = "ap-south-1"
       access_key = "AKIAXQM6UOUEIV6HREG5"
