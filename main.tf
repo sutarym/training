@@ -2,17 +2,9 @@
 
 
 
-provider "aws" {
-  region     = "ap-south-1"
-  access_key = "AKIAXQM6UOUEN4AYOC5O"
-  secret_key = "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"
-}
-
-
-terraform {
-  backend "s3" {
-    bucket = "yasin-sutar-bucket"
-    key    = "Yasin-Sutar.tfstate"
-    region     = "ap-south-1"
-  }
+resource "aws_instance" "myFirstInstance" {
+  ami           = "ami-06c2ec1ceac22e8d6"
+#  key_name = var.key_name
+  instance_type = "t2.micro"
+  
 }
