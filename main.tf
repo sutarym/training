@@ -8,11 +8,6 @@ secret_key = "TxOBwWWdcW7dvRVzZ3AimIKIuFABMRZxR5IEt445"
 
 }
 
-backend "s3" {
-  bucket = "yasin-sutar-bucket"
-  region = "ap-south-1"
-}
-
 
 
 
