@@ -28,8 +28,7 @@ pipeline {
   steps {
     sh """
       aws lambda invoke \
-        --function-name my-lambda-function \
-        --payload '{ "message": "Hello, world!" }' \
+        --function-name lambda \
         output.json
     """
     script {
