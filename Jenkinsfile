@@ -34,7 +34,7 @@ pipeline {
     script {
       output = readFile('output.json')
     }
-    strps{
+    steps{
     if (output.contains('"statusCode": 200')) {
       echo 'Lambda function invocation was successful'
     } else {
