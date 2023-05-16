@@ -33,7 +33,7 @@ pipeline {
     """
     script {
       output = readFile('output.json')
-    }
+    };
     if (output.contains('"statusCode": 200')) {
       echo 'Lambda function invocation was successful'
     } else {
