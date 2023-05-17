@@ -1,23 +1,22 @@
 import requests
 import os
+import json
+import boto3
 
-def lambda_handler(event, context):
-  # Get the subnet ID from the event
-  subnet = os.environ['subnet']
-  # Get the name and email address from the event
-  name = event['name']
-  email = event['email']
-  # Create the request body
-  request_body = {
-    'subnet_id': subnet,
-    'name': Yasin,
-    'email': sutaryasin243@gmail.com
+def lambda_handler():
+
+  request_body_ = {
+    'subnet_id': "subnet",
+    'name': "Yasin",
+    'email': "sutaryasin243@gmail.com"
   }
-  # Create the request headers
+    # Convert the payload to JSON
+  request_body = json.dumps(request_body_)
+ 
   request_headers = {
-    'X-Yasin-Auth': 'test'
-  }
-  # Make the request to the HTTPS endpoint
+        "Content-Type": "application/json"
+    }
+
   response = requests.post('https://httpbin.org/post',
                              headers=request_headers,
                              data=json.dumps(request_body))
@@ -33,12 +32,4 @@ def lambda_handler(event, context):
       'body': json.dumps({'message': 'The request failed.'})
     }
 
-
-# if __name__ == '__main__':
-#   event = {
-#     "subnet_id": "subnet-12345678",
-#     "name": "John Doe",
-#     "email": "john.doe@example.com"
-#   }
-#   response = lambda_handler(event, {})
-#   print(response)
+print(lambda_handler())
