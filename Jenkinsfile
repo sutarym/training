@@ -26,7 +26,15 @@ pipeline {
     }
        */
 
+    stage('Configure AWS Credentials') {
+            steps {
+                    bat 'aws configure set aws_access_key_id AKIAWCSPRP7CUZL6TMFS'
+                    bat 'aws configure set aws_secret_access_key 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'
+                    bat 'aws configure set region ap-south-1'
+            }
+        }
     stage('Invoke Lambda Function') {
+      
       steps {
         script {
           sh """
@@ -45,7 +53,9 @@ pipeline {
           }
         }
       }
-    }
+      
+      
+     
  
   }
 }
