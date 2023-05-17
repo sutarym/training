@@ -11,18 +11,21 @@ pipeline {
         bat 'terraform plan'
       }
     }
+    /*
     stage('Apply') {
       steps {
         bat 'terraform apply -auto-approve'
       }
     }
-    /*
+    */
+    
     stage('Destroy') {
       steps {
         bat 'terraform destroy -auto-approve'
       }
     }
-    */
+    
+    /*
     stage('Invoke Lambda Function') {
       steps {
         script {
@@ -43,5 +46,6 @@ pipeline {
         }
       }
     }
+    */
   }
 }
