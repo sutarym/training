@@ -3,7 +3,7 @@ terraform {
     bucket = "delete-bucket-yasin"
     key    = "terraform.tfstate"
     region = "ap-south-1"
-      access_key = "AKIAXQM6UOUEF6V3C4RC"
-  secret_key = "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"
+      access_key = "AKIAXQM6UOUEPNWGC7MB"
+  secret_key = "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"
   }
 }
