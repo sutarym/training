@@ -29,6 +29,7 @@ pipeline {
           sh """
             aws lambda invoke \
               --function-name lambda \
+              --region ap-south-1 \
               output.json
           """
           output = readFile('output.json')
