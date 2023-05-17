@@ -23,10 +23,15 @@ resource "aws_subnet" "my_subnet" {
   }
 }
 
+resource "aws_subnet" "public_subnet" {
+  vpc_id     = aws_vpc.my_vpc.id
+  cidr_block = "10.0.2.0/24"
+}
+
 # Create NAT gateway
 resource "aws_nat_gateway" "my_nat_gateway" {
   allocation_id = aws_eip.my_eip.id
-  subnet_id     = aws_subnet.my_subnet.id
+  subnet_id     = aws_subnet.public_subnet.id
 
 }
 
@@ -61,9 +66,9 @@ resource "aws_security_group" "my_security_group" {
   vpc_id      = aws_vpc.my_vpc.id
 
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -173,5 +178,3 @@ resource "aws_iam_role_policy_attachment" "lambda-ec2-policy-attach" {
 resource "aws_internet_gateway" "example" {
   vpc_id = aws_vpc.my_vpc.id
 }
-
-
