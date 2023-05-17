@@ -28,8 +28,8 @@ pipeline {
 
     stage('Configure AWS Credentials') {
             steps {
-                    bat 'aws configure set aws_access_key_id AKIAWCSPRP7CUZL6TMFS'
-                    bat 'aws configure set aws_secret_access_key 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'
+                    bat 'aws configure set aws_access_key_id AKIAXQM6UOUEPNWGC7MB'
+                    bat 'aws configure set aws_secret_access_key 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'
                     bat 'aws configure set region ap-south-1'
             }
         }
@@ -58,4 +58,5 @@ pipeline {
      
  
   }
+}
 }
