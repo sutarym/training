@@ -6,7 +6,7 @@ pipeline {
         bat 'terraform init'
       }
     }
-    /*
+    
     stage('Install Dependencies') {
       steps {
         script {
@@ -16,6 +16,7 @@ pipeline {
         }
       }
     }
+/*
     stage('Plan') {
       steps {
         bat 'terraform plan'
@@ -28,7 +29,7 @@ pipeline {
       }
     }
     
-     */   
+       
     stage('Destroy') {
       steps {
         bat 'terraform destroy -auto-approve'
@@ -68,5 +69,6 @@ pipeline {
      
  
   }
+  */ 
 }
 }
