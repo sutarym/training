@@ -6,6 +6,15 @@ pipeline {
         bat 'terraform init'
       }
     }
+    stage('Install Dependencies') {
+      steps {
+        script {
+          sh """
+            pip install boto3 requests -t .
+          """
+        }
+      }
+    }
     stage('Plan') {
       steps {
         bat 'terraform plan'
