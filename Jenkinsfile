@@ -5,7 +5,7 @@ pipeline {
       steps {
         bat 'terraform init'
       }
-    }
+    }/*
     stage('Install Dependencies') {
       steps {
         script {
@@ -27,13 +27,13 @@ pipeline {
       }
     }
     
-        
+     */   
     stage('Destroy') {
       steps {
         bat 'terraform destroy -auto-approve'
       }
     }
-       */
+       /*
 
     stage('Configure AWS Credentials') {
             steps {
@@ -66,6 +66,6 @@ pipeline {
       
      
  
-  }
+  }*/
 }
 }
